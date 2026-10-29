@@ -4,44 +4,87 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Adham Mamdouh Elnaqib</title>
+  <title>Adham Mamdouh Elnaqib — Machine Learning & Systems</title>
   <meta name="description"
-    content="Computer Science Senior at Cairo University. IBM ML Professional Certificate holder. Projects in machine learning, LLM tools and sports analytics.">
-  <meta property="og:title" content="Adham Mamdouh Elnaqib">
+    content="Computer Science Senior at Cairo University. IBM ML Professional Certificate holder. Building machine learning systems, LLM interfaces, and sports analytics models.">
+  <meta property="og:title" content="Adham Mamdouh Elnaqib — Machine Learning & Systems">
   <meta property="og:description"
-    content="Computer Science Senior at Cairo University. Projects in machine learning, LLM tools and sports analytics.">
+    content="Computer Science Senior at Cairo University. Projects in machine learning systems, LLM interfaces, and sports analytics.">
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
   <style>
     :root {
-      /* Apple HIG System Palette (Light) */
-      --system-bg: #f5f5f7;
-      --card-bg: #ffffff;
+      /* Apple HIG System Palette — Light Mode */
+      --canvas: #fbfbfd;
+      --surface-card: #ffffff;
+      --surface-secondary: #f5f5f7;
+      --surface-tertiary: #e8e8ed;
+      --surface-glass: rgba(255, 255, 255, 0.76);
+      --surface-glass-border: rgba(0, 0, 0, 0.08);
+
       --label-primary: #1d1d1f;
       --label-secondary: #6e6e73;
       --label-tertiary: #86868b;
+      --label-quaternary: #aeaeb2;
+
       --separator: rgba(0, 0, 0, 0.08);
+      --separator-opaque: #e5e5ea;
+
       --accent: #0071e3;
       --accent-hover: #0077ed;
-      --tag-bg: rgba(0, 0, 0, 0.04);
-      --tag-border: rgba(0, 0, 0, 0.06);
+      --accent-subtle: rgba(0, 113, 227, 0.08);
+      --accent-tinted-text: #0062c4;
+
+      --signal-green: #34c759;
+      --signal-green-subtle: rgba(52, 199, 89, 0.12);
+
       --focus-ring: #0071e3;
+
+      /* Typography scale (Apple Human Interface Guidelines) */
       --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       --font-mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 980px;
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+      --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        /* Apple HIG System Palette (Dark) */
-        --system-bg: #000000;
-        --card-bg: #1c1c1e;
+        /* Apple HIG System Palette — Dark Mode */
+        --canvas: #000000;
+        --surface-card: #1c1c1e;
+        --surface-secondary: #2c2c2e;
+        --surface-tertiary: #3a3a3c;
+        --surface-glass: rgba(28, 28, 30, 0.82);
+        --surface-glass-border: rgba(255, 255, 255, 0.12);
+
         --label-primary: #f5f5f7;
-        --label-secondary: #86868b;
-        --label-tertiary: #6e6e73;
-        --separator: rgba(255, 255, 255, 0.1);
+        --label-secondary: #98989d;
+        --label-tertiary: #7c7c82;
+        --label-quaternary: #48484a;
+
+        --separator: rgba(255, 255, 255, 0.12);
+        --separator-opaque: #38383a;
+
         --accent: #2997ff;
         --accent-hover: #47a7ff;
-        --tag-bg: rgba(255, 255, 255, 0.06);
-        --tag-border: rgba(255, 255, 255, 0.08);
+        --accent-subtle: rgba(41, 151, 255, 0.14);
+        --accent-tinted-text: #54aaff;
+
+        --signal-green: #30d158;
+        --signal-green-subtle: rgba(48, 209, 88, 0.16);
+
         --focus-ring: #2997ff;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+        --shadow-card: 0 4px 24px -2px rgba(0, 0, 0, 0.35);
+        --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
       }
     }
 
@@ -49,16 +92,18 @@
     *::before,
     *::after {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
       -webkit-text-size-adjust: 100%;
-      background-color: var(--system-bg);
+      background-color: var(--canvas);
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
-      background-color: var(--system-bg);
+      background-color: var(--canvas);
       color: var(--label-primary);
       font-family: var(--font-system);
       font-size: 17px;
@@ -66,320 +111,765 @@
       letter-spacing: -0.022em;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-    }
-
-    main {
-      max-width: 44rem;
-      margin: 0 auto;
-      padding: clamp(3rem, 7vw, 5rem) 1.25rem 4rem;
-    }
-
-    /* Header & Hero */
-    header {
-      margin-bottom: 2.5rem;
-    }
-
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--label-secondary);
-      background-color: var(--tag-bg);
-      border: 1px solid var(--tag-border);
-      padding: 0.25rem 0.65rem;
-      border-radius: 980px;
-      margin-bottom: 1.2rem;
-    }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background-color: #34c759;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 5.5vw, 3rem);
-      font-weight: 700;
-      line-height: 1.08349;
-      letter-spacing: -0.035em;
-      margin: 0 0 0.5rem;
-      color: var(--label-primary);
-    }
-
-    .subtitle {
-      font-size: 1.125rem;
-      line-height: 1.4;
-      color: var(--label-secondary);
-      margin: 0;
-    }
-
-    /* Section Typography */
-    section {
-      margin-top: 2.75rem;
-    }
-
-    .section-eyebrow {
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 1.38462;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--label-secondary);
-      margin: 0 0 0.75rem 0.5rem;
-    }
-
-    /* Inset Grouped Container */
-    .inset-card {
-      background-color: var(--card-bg);
-      border-radius: 16px;
-      border: 1px solid var(--separator);
-      overflow: hidden;
-    }
-
-    .card-padding {
-      padding: 1.5rem;
-    }
-
-    .lead-text {
-      margin: 0 0 1.25rem;
-      font-size: 17px;
-      line-height: 1.55;
-      color: var(--label-primary);
-    }
-
-    /* Capability Tags */
-    .stack-group {
+      min-height: 100vh;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--separator);
+      flex-direction: column;
     }
 
-    .stack-tag {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--label-secondary);
-      background-color: var(--tag-bg);
-      border: 1px solid var(--tag-border);
-      padding: 0.3rem 0.55rem;
-      border-radius: 6px;
-    }
-
-    /* Interactive Table Rows */
-    .row-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .row-item {
-      position: relative;
-    }
-
-    .row-item:not(:last-child)::after {
-      content: "";
+    /* Accessibility: Skip Navigation Link */
+    .skip-link {
       position: absolute;
-      bottom: 0;
-      left: 1.25rem;
-      right: 0;
-      height: 1px;
-      background-color: var(--separator);
+      top: -100px;
+      left: 1rem;
+      background: var(--accent);
+      color: #ffffff;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      z-index: 999;
+      transition: top 0.2s ease;
     }
 
-    .row-anchor {
+    .skip-link:focus {
+      top: 1rem;
+      outline: 2px solid #ffffff;
+    }
+
+    /* ========================================================
+       FUNCTIONAL LAYER: Floating Liquid Glass Navigation Bar
+       (Apple HIG: Liquid Glass strictly on floating controls)
+       ======================================================== */
+    .floating-nav-container {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .liquid-glass-bar {
+      pointer-events: auto;
+      max-width: 48rem;
+      width: 100%;
+      background: var(--surface-glass);
+      backdrop-filter: blur(24px) saturate(140%);
+      -webkit-backdrop-filter: blur(24px) saturate(140%);
+      border: 1px solid var(--surface-glass-border);
+      border-radius: var(--radius-pill);
+      padding: 0.45rem 0.65rem 0.45rem 1.1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      padding: 1.15rem 1.25rem;
+      box-shadow: var(--shadow-glass);
+      transition: border-color 0.2s ease;
+    }
+
+    .nav-identity {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
       text-decoration: none;
       color: inherit;
-      min-height: 44px;
-      /* Apple minimum touch target */
-      outline: none;
+      min-height: 38px;
     }
 
-    @media (prefers-reduced-motion: no-preference) {
-      .row-anchor {
-        transition: background-color 0.12s ease;
-      }
-
-      .arrow-symbol {
-        transition: transform 0.15s ease, color 0.15s ease;
-      }
-    }
-
-    .row-anchor:hover {
-      background-color: var(--tag-bg);
-    }
-
-    .row-anchor:hover .project-title {
-      color: var(--accent);
-    }
-
-    .row-anchor:hover .arrow-symbol {
-      transform: translate(2px, -2px);
-      color: var(--accent);
-    }
-
-    .row-anchor:focus-visible {
-      box-shadow: inset 0 0 0 2px var(--focus-ring);
-    }
-
-    .project-body {
+    .nav-identity-mark {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, var(--accent) 0%, #5856d6 100%);
       display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: -0.03em;
     }
 
-    .project-title {
-      font-size: 17px;
+    .nav-name {
+      font-size: 14px;
       font-weight: 600;
       letter-spacing: -0.015em;
       color: var(--label-primary);
     }
 
-    .project-desc {
+    .nav-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--label-secondary);
+      padding: 0.15rem 0.5rem;
+      background: var(--surface-secondary);
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--separator);
+    }
+
+    .status-dot-pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--signal-green);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.85rem;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: var(--radius-pill);
+      min-height: 34px;
+      min-width: 34px;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.12s ease;
+      outline: none;
+    }
+
+    .action-btn-secondary {
+      color: var(--label-primary);
+      background: transparent;
+    }
+
+    .action-btn-secondary:hover {
+      background: var(--surface-secondary);
+      color: var(--label-primary);
+    }
+
+    .action-btn-prominent {
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+    }
+
+    .action-btn-prominent:hover {
+      background: var(--accent-hover);
+    }
+
+    .action-btn:focus-visible {
+      box-shadow: 0 0 0 2px var(--focus-ring);
+    }
+
+    /* ========================================================
+       CONTENT LAYER: Semantic, Structured, & Vibrant
+       ======================================================== */
+    main {
+      max-width: 48rem;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 5rem;
+      flex: 1;
+    }
+
+    /* Hero Header */
+    .hero-header {
+      padding: 2.25rem 0 2rem;
+    }
+
+    .hero-eyebrow-group {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .pill-badge {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      background: var(--surface-secondary);
+      color: var(--label-secondary);
+      border: 1px solid var(--separator);
+    }
+
+    .pill-badge-accent {
+      background: var(--accent-subtle);
+      color: var(--accent-tinted-text);
+      border-color: transparent;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 5.5vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.038em;
+      color: var(--label-primary);
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+      line-height: 1.42;
+      color: var(--label-secondary);
+      letter-spacing: -0.015em;
+      max-width: 40rem;
+    }
+
+    /* Sections & Inset Grouped Cards (Apple HIG Standard Materials) */
+    section {
+      margin-top: 3rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      padding: 0 0.5rem;
+    }
+
+    .section-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.38;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--label-secondary);
+    }
+
+    .section-note {
+      font-size: 13px;
+      color: var(--label-tertiary);
+    }
+
+    .inset-grouped-card {
+      background: var(--surface-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--separator);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .card-content-block {
+      padding: 1.6rem 1.6rem;
+    }
+
+    .body-prose {
+      font-size: 17px;
+      line-height: 1.58;
+      color: var(--label-primary);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Skill Domain Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--separator);
+    }
+
+    .skill-column h3 {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--label-tertiary);
+      margin-bottom: 0.55rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skill-pill {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--label-secondary);
+      background-color: var(--surface-secondary);
+      border: 1px solid var(--separator);
+      padding: 0.25rem 0.55rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ========================================================
+       WORK & PROJECT ROWS (HIG List and Table Row Pattern)
+       ======================================================== */
+    .projects-list {
+      list-style: none;
+    }
+
+    .project-row {
+      position: relative;
+    }
+
+    .project-row:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 1.5rem;
+      right: 0;
+      height: 1px;
+      background-color: var(--separator);
+    }
+
+    .project-link-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      padding: 1.5rem 1.6rem;
+      text-decoration: none;
+      color: inherit;
+      min-height: 44px;
+      outline: none;
+      background: transparent;
+      transition: background-color 0.15s ease;
+    }
+
+    .project-link-card:hover {
+      background-color: var(--surface-secondary);
+    }
+
+    .project-link-card:focus-visible {
+      box-shadow: inset 0 0 0 2px var(--focus-ring);
+    }
+
+    .project-header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .project-title-area {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .project-name {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.018em;
+      color: var(--label-primary);
+      transition: color 0.15s ease;
+    }
+
+    .project-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      background: var(--surface-secondary);
+      color: var(--label-secondary);
+      border: 1px solid var(--separator);
+    }
+
+    .project-badge-highlight {
+      background: var(--signal-green-subtle);
+      color: var(--signal-green);
+      border-color: transparent;
+    }
+
+    .project-action-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
       font-size: 14px;
-      line-height: 1.4;
+      font-weight: 500;
+      color: var(--label-tertiary);
+      transition: transform 0.15s ease, color 0.15s ease;
+      flex-shrink: 0;
+    }
+
+    .project-link-card:hover .project-name {
+      color: var(--accent);
+    }
+
+    .project-link-card:hover .project-action-indicator {
+      color: var(--accent);
+      transform: translate(2px, -2px);
+    }
+
+    .project-description {
+      font-size: 15px;
+      line-height: 1.48;
       color: var(--label-secondary);
       margin: 0;
     }
 
-    .project-meta {
+    .project-metrics-row {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--label-secondary);
+    }
+
+    .metric-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--surface-secondary);
+      border: 1px solid var(--separator);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      color: var(--label-secondary);
+    }
+
+    .metric-chip strong {
+      color: var(--label-primary);
+      font-weight: 600;
+    }
+
+    /* Credentials & Certification Box */
+    .credential-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.1rem 1.6rem;
+    }
+
+    .credential-row:not(:last-child) {
+      border-bottom: 1px solid var(--separator);
+    }
+
+    .credential-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--label-primary);
+    }
+
+    .credential-issuer {
+      font-size: 13px;
+      color: var(--label-secondary);
+    }
+
+    .credential-meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--label-tertiary);
+      text-align: right;
       flex-shrink: 0;
     }
 
-    .platform-pill {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 500;
+    /* Connect & Contact Actions */
+    .connect-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--separator);
+    }
+
+    .connect-card {
+      background: var(--surface-card);
+      padding: 1.4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      text-decoration: none;
+      color: inherit;
+      min-height: 44px;
+      transition: background-color 0.15s ease;
+      outline: none;
+    }
+
+    .connect-card:hover {
+      background-color: var(--surface-secondary);
+    }
+
+    .connect-card:focus-visible {
+      box-shadow: inset 0 0 0 2px var(--focus-ring);
+    }
+
+    .connect-label {
+      font-size: 12px;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      color: var(--label-secondary);
-      background-color: var(--tag-bg);
-      border: 1px solid var(--tag-border);
-      padding: 0.2rem 0.5rem;
-      border-radius: 6px;
-    }
-
-    .arrow-symbol {
       color: var(--label-tertiary);
-      font-size: 15px;
-      line-height: 1;
     }
 
-    /* Footer */
+    .connect-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--label-primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .connect-card:hover .connect-value {
+      color: var(--accent);
+    }
+
+    /* ========================================================
+       FOOTER
+       ======================================================== */
     footer {
-      margin-top: 4rem;
-      padding: 0 0.5rem;
+      margin-top: 4.5rem;
+      padding: 1.5rem 0.5rem 0;
+      border-top: 1px solid var(--separator);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 12px;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 13px;
       color: var(--label-tertiary);
     }
 
-    @media (max-width: 38rem) {
-      .row-anchor {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.6rem;
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Mobile Responsive adjustments */
+    @media (max-width: 40rem) {
+      .floating-nav-container {
+        padding: 0.5rem 0.75rem;
       }
 
-      .project-meta {
-        align-self: flex-start;
+      .nav-status {
+        display: none;
+      }
+
+      .action-btn-secondary span {
+        display: none;
+      }
+
+      main {
+        padding: 1.5rem 1rem 4rem;
+      }
+
+      .credential-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+      }
+
+      .credential-meta {
+        text-align: left;
       }
 
       footer {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.4rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <main>
-    <header>
-      <div class="status-badge" aria-label="Current status">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span>Senior / Class of 2026</span>
+  <!-- Accessibility Skip Navigation -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Functional Layer: Floating Liquid Glass Bar -->
+  <header class="floating-nav-container">
+    <nav class="liquid-glass-bar" aria-label="Quick Actions Navigation">
+      <a href="#" class="nav-identity" aria-label="Adham Mamdouh Elnaqib home">
+        <div class="nav-identity-mark" aria-hidden="true">A</div>
+        <span class="nav-name">Adham Elnaqib</span>
+        <div class="nav-status" aria-label="Available for ML Engineering roles">
+          <span class="status-dot-pulse" aria-hidden="true"></span>
+          <span>Class of 2026</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <a href="#work" class="action-btn action-btn-secondary">
+          <span>Selected Work</span>
+        </a>
+        <a href="#connect" class="action-btn action-btn-secondary">
+          <span>Connect</span>
+        </a>
+        <a href="mailto:adhamelnaqib@gmail.com" class="action-btn action-btn-prominent"
+          aria-label="Send email to Adham Elnaqib">
+          <span>Email</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Content Layer: Primary Page Information -->
+  <main id="main-content">
+    <div class="hero-header">
+      <div class="hero-eyebrow-group">
+        <span class="pill-badge pill-badge-accent">Computer Science &bull; Machine Learning</span>
+        <span class="pill-badge">Cairo University</span>
+        <span class="pill-badge">IBM ML Professional</span>
       </div>
       <h1>Adham Mamdouh Elnaqib</h1>
-      <p class="subtitle">Computer Science at Cairo University &bull; IBM ML Certified</p>
-    </header>
+      <p class="hero-lead">
+        Machine learning systems, player efficiency analytics, and low-latency LLM tools engineered with clean, resilient
+        architecture.
+      </p>
+    </div>
 
-    <section aria-labelledby="about-title">
-      <h2 id="about-title" class="section-eyebrow">Profile</h2>
-      <div class="inset-card card-padding">
-        <p class="lead-text">
-          Computer Science Senior specializing in machine learning systems, sports analytics models, and language model
-          interfaces. Focused on building responsive, high-integrity tools with clean cloud infrastructure.
-        </p>
-        <div class="stack-group" aria-label="Technical skills and tools">
-          <span class="stack-tag">Python</span>
-          <span class="stack-tag">C++</span>
-          <span class="stack-tag">TypeScript</span>
-          <span class="stack-tag">PyTorch / Scikit-Learn</span>
-          <span class="stack-tag">Next.js</span>
-          <span class="stack-tag">Terraform</span>
+    <!-- Profile & Technical Core -->
+    <section aria-labelledby="profile-heading">
+      <div class="section-header">
+        <h2 id="profile-heading" class="section-eyebrow">Profile & Competencies</h2>
+        <span class="section-note">Core Stack</span>
+      </div>
+      <div class="inset-grouped-card">
+        <div class="card-content-block">
+          <p class="body-prose">
+            Senior Computer Science student at Cairo University with an IBM Machine Learning Professional Certificate.
+            Passionate about bridging empirical ML models with high-performance edge inference, scalable data
+            pipelines, and ergonomic analytical user interfaces.
+          </p>
+
+          <div class="skills-grid" aria-label="Technical skill categorization">
+            <div class="skill-column">
+              <h3>Machine Learning</h3>
+              <div class="skill-tags">
+                <span class="skill-pill">PyTorch</span>
+                <span class="skill-pill">Scikit-Learn</span>
+                <span class="skill-pill">Pandas / NumPy</span>
+                <span class="skill-pill">Model Eval</span>
+              </div>
+            </div>
+            <div class="skill-column">
+              <h3>Systems & Languages</h3>
+              <div class="skill-tags">
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">C++</span>
+                <span class="skill-pill">TypeScript</span>
+                <span class="skill-pill">SQL</span>
+              </div>
+            </div>
+            <div class="skill-column">
+              <h3>Infrastructure & Web</h3>
+              <div class="skill-tags">
+                <span class="skill-pill">Cloudflare Workers</span>
+                <span class="skill-pill">Next.js</span>
+                <span class="skill-pill">Terraform</span>
+                <span class="skill-pill">Streamlit</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section aria-labelledby="projects-title">
-      <h2 id="projects-title" class="section-eyebrow">Selected Work</h2>
-      <div class="inset-card">
-        <ul class="row-list">
-          <li class="row-item">
-            <a href="https://ask-your-data-demo.adhamelnaqib.workers.dev" class="row-anchor" target="_blank"
-              rel="noopener noreferrer">
-              <div class="project-body">
-                <span class="project-title">Ask Your Data</span>
-                <p class="project-desc">Query structured tabular datasets in plain language with LLM-assisted execution.
-                </p>
+    <!-- Selected Work / Projects -->
+    <section id="work" aria-labelledby="work-heading">
+      <div class="section-header">
+        <h2 id="work-heading" class="section-eyebrow">Selected Work</h2>
+        <span class="section-note">3 Featured Artifacts</span>
+      </div>
+
+      <div class="inset-grouped-card">
+        <ul class="projects-list">
+          <!-- Project 1: Ask Your Data -->
+          <li class="project-row">
+            <a href="https://ask-your-data-demo.adhamelnaqib.workers.dev" class="project-link-card" target="_blank"
+              rel="noopener noreferrer" aria-label="Open Ask Your Data project demo">
+              <div class="project-header-row">
+                <div class="project-title-area">
+                  <span class="project-name">Ask Your Data</span>
+                  <span class="project-badge project-badge-highlight">Live Edge Demo</span>
+                </div>
+                <div class="project-action-indicator" aria-hidden="true">
+                  <span>Visit</span>
+                  <span>&#8599;</span>
+                </div>
               </div>
-              <div class="project-meta">
-                <span class="platform-pill">Cloudflare Worker</span>
-                <span class="arrow-symbol" aria-hidden="true">&#8599;</span>
+              <p class="project-description">
+                Interactive plain-language interface for tabular analytics. Translates natural language prompts into
+                verified analytical queries with LLM-assisted execution running on serverless edge compute.
+              </p>
+              <div class="project-metrics-row">
+                <span class="metric-chip"><strong>Runtime:</strong> Cloudflare Workers</span>
+                <span class="metric-chip"><strong>Capability:</strong> NL-to-Data Pipeline</span>
+                <span class="metric-chip"><strong>Latency:</strong> Edge Distributed</span>
               </div>
             </a>
           </li>
-          <li class="row-item">
-            <a href="https://stephscore.streamlit.app" class="row-anchor" target="_blank" rel="noopener noreferrer">
-              <div class="project-body">
-                <span class="project-title">STEPH Score</span>
-                <p class="project-desc">Basketball impact metric and exploratory data dashboard for player efficiency.
-                </p>
+
+          <!-- Project 2: STEPH Score -->
+          <li class="project-row">
+            <a href="https://stephscore.streamlit.app" class="project-link-card" target="_blank"
+              rel="noopener noreferrer" aria-label="Open STEPH Score analytics dashboard">
+              <div class="project-header-row">
+                <div class="project-title-area">
+                  <span class="project-name">STEPH Score</span>
+                  <span class="project-badge">Sports Analytics</span>
+                </div>
+                <div class="project-action-indicator" aria-hidden="true">
+                  <span>Explore</span>
+                  <span>&#8599;</span>
+                </div>
               </div>
-              <div class="project-meta">
-                <span class="platform-pill">Streamlit</span>
-                <span class="arrow-symbol" aria-hidden="true">&#8599;</span>
+              <p class="project-description">
+                Custom basketball impact and efficiency metric modeling tool. Integrates exploratory statistical
+                visualizations to dissect multidimensional NBA player tracking and efficiency trends.
+              </p>
+              <div class="project-metrics-row">
+                <span class="metric-chip"><strong>Stack:</strong> Python &bull; Streamlit</span>
+                <span class="metric-chip"><strong>Domain:</strong> Player Impact Modeling</span>
+                <span class="metric-chip"><strong>Telemetry:</strong> Statistical Scoring</span>
               </div>
             </a>
           </li>
-          <li class="row-item">
+
+          <!-- Project 3: Technical Archive -->
+          <li class="project-row">
             <a href="https://drive.google.com/drive/folders/19e2YlYD5Ni3p4MOc_g0Y0Ofqm_7hCVNa?usp=share_link"
-              class="row-anchor" target="_blank" rel="noopener noreferrer">
-              <div class="project-body">
-                <span class="project-title">Technical Project Archive</span>
-                <p class="project-desc">Repository of laboratory assignments, course implementations, and research
-                  files.</p>
+              class="project-link-card" target="_blank" rel="noopener noreferrer"
+              aria-label="Open Technical Project Archive on Google Drive">
+              <div class="project-header-row">
+                <div class="project-title-area">
+                  <span class="project-name">Technical Implementations & Lab Archive</span>
+                  <span class="project-badge">Academic & Research</span>
+                </div>
+                <div class="project-action-indicator" aria-hidden="true">
+                  <span>Archive</span>
+                  <span>&#8599;</span>
+                </div>
               </div>
-              <div class="project-meta">
-                <span class="platform-pill">Archive</span>
-                <span class="arrow-symbol" aria-hidden="true">&#8599;</span>
+              <p class="project-description">
+                Comprehensive archive of laboratory assignments, machine learning experiments, systems implementations,
+                and research code developed at Cairo University.
+              </p>
+              <div class="project-metrics-row">
+                <span class="metric-chip"><strong>Core:</strong> C++ &bull; Python &bull; PyTorch</span>
+                <span class="metric-chip"><strong>Scope:</strong> Algorithms &bull; Architecture</span>
               </div>
             </a>
           </li>
@@ -387,9 +877,82 @@
       </div>
     </section>
 
+    <!-- Education & Certifications -->
+    <section aria-labelledby="credentials-heading">
+      <div class="section-header">
+        <h2 id="credentials-heading" class="section-eyebrow">Academic & Professional Credentials</h2>
+      </div>
+      <div class="inset-grouped-card">
+        <div class="credential-row">
+          <div>
+            <div class="credential-title">Bachelor of Science in Computer Science</div>
+            <div class="credential-issuer">Cairo University &bull; Faculty of Computers and Artificial Intelligence</div>
+          </div>
+          <div class="credential-meta">Class of 2026</div>
+        </div>
+        <div class="credential-row">
+          <div>
+            <div class="credential-title">IBM Machine Learning Professional Certificate</div>
+            <div class="credential-issuer">IBM &bull; Deep Learning, Classification, Regression & Recommenders</div>
+          </div>
+          <div class="credential-meta">Verified Credential</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & External Links -->
+    <section id="connect" aria-labelledby="connect-heading">
+      <div class="section-header">
+        <h2 id="connect-heading" class="section-eyebrow">Connect & Network</h2>
+        <span class="section-note">Direct Inquiries</span>
+      </div>
+      <div class="inset-grouped-card">
+        <div class="connect-grid">
+          <a href="mailto:adhamelnaqib@gmail.com" class="connect-card" aria-label="Send email to adhamelnaqib@gmail.com">
+            <span class="connect-label">Email</span>
+            <span class="connect-value">
+              <span>adhamelnaqib@gmail.com</span>
+              <span aria-hidden="true">&#8599;</span>
+            </span>
+          </a>
+          <a href="https://github.com/Adhamelnaqib1" class="connect-card" target="_blank" rel="noopener noreferrer"
+            aria-label="View GitHub profile">
+            <span class="connect-label">GitHub</span>
+            <span class="connect-value">
+              <span>@Adhamelnaqib1</span>
+              <span aria-hidden="true">&#8599;</span>
+            </span>
+          </a>
+          <a href="https://www.linkedin.com/in/adham-elnaqib-523171249" class="connect-card" target="_blank"
+            rel="noopener noreferrer" aria-label="View LinkedIn profile">
+            <span class="connect-label">LinkedIn</span>
+            <span class="connect-value">
+              <span>Adham Elnaqib</span>
+              <span aria-hidden="true">&#8599;</span>
+            </span>
+          </a>
+          <a href="https://drive.google.com/drive/folders/19e2YlYD5Ni3p4MOc_g0Y0Ofqm_7hCVNa?usp=share_link"
+            class="connect-card" target="_blank" rel="noopener noreferrer" aria-label="Open Technical Archive">
+            <span class="connect-label">Project Archive</span>
+            <span class="connect-value">
+              <span>Google Drive</span>
+              <span aria-hidden="true">&#8599;</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page Footer -->
     <footer>
-      <span>&copy; 2026 Adham Mamdouh Elnaqib</span>
-      <span>Cairo, Egypt</span>
+      <div class="footer-left">
+        <span>&copy; 2026 Adham Mamdouh Elnaqib</span>
+        <span>&bull;</span>
+        <span>Cairo, Egypt</span>
+      </div>
+      <div>
+        <span>Built with Apple HIG & Dynamic Liquid Glass principles</span>
+      </div>
     </footer>
   </main>
 </body>
