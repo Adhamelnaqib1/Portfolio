@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Adham Mamdouh Elnaqib</title>
+  <meta name="description"
+    content="Computer Science Senior at Cairo University. IBM ML Professional Certificate holder. Projects in machine learning, LLM tools and sports analytics.">
+  <meta property="og:title" content="Adham Mamdouh Elnaqib">
+  <meta property="og:description"
+    content="Computer Science Senior at Cairo University. Projects in machine learning, LLM tools and sports analytics.">
+  <style>
+    :root {
+      /* Apple HIG System Palette (Light) */
+      --system-bg: #f5f5f7;
+      --card-bg: #ffffff;
+      --label-primary: #1d1d1f;
+      --label-secondary: #6e6e73;
+      --label-tertiary: #86868b;
+      --separator: rgba(0, 0, 0, 0.08);
+      --accent: #0071e3;
+      --accent-hover: #0077ed;
+      --tag-bg: rgba(0, 0, 0, 0.04);
+      --tag-border: rgba(0, 0, 0, 0.06);
+      --focus-ring: #0071e3;
+      --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        /* Apple HIG System Palette (Dark) */
+        --system-bg: #000000;
+        --card-bg: #1c1c1e;
+        --label-primary: #f5f5f7;
+        --label-secondary: #86868b;
+        --label-tertiary: #6e6e73;
+        --separator: rgba(255, 255, 255, 0.1);
+        --accent: #2997ff;
+        --accent-hover: #47a7ff;
+        --tag-bg: rgba(255, 255, 255, 0.06);
+        --tag-border: rgba(255, 255, 255, 0.08);
+        --focus-ring: #2997ff;
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      background-color: var(--system-bg);
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--system-bg);
+      color: var(--label-primary);
+      font-family: var(--font-system);
+      font-size: 17px;
+      line-height: 1.47059;
+      letter-spacing: -0.022em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    main {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: clamp(3rem, 7vw, 5rem) 1.25rem 4rem;
+    }
+
+    /* Header & Hero */
+    header {
+      margin-bottom: 2.5rem;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--label-secondary);
+      background-color: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 980px;
+      margin-bottom: 1.2rem;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #34c759;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.08349;
+      letter-spacing: -0.035em;
+      margin: 0 0 0.5rem;
+      color: var(--label-primary);
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      line-height: 1.4;
+      color: var(--label-secondary);
+      margin: 0;
+    }
+
+    /* Section Typography */
+    section {
+      margin-top: 2.75rem;
+    }
+
+    .section-eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.38462;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--label-secondary);
+      margin: 0 0 0.75rem 0.5rem;
+    }
+
+    /* Inset Grouped Container */
+    .inset-card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--separator);
+      overflow: hidden;
+    }
+
+    .card-padding {
+      padding: 1.5rem;
+    }
+
+    .lead-text {
+      margin: 0 0 1.25rem;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--label-primary);
+    }
+
+    /* Capability Tags */
+    .stack-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--separator);
+    }
+
+    .stack-tag {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--label-secondary);
+      background-color: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      padding: 0.3rem 0.55rem;
+      border-radius: 6px;
+    }
+
+    /* Interactive Table Rows */
+    .row-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .row-item {
+      position: relative;
+    }
+
+    .row-item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 1.25rem;
+      right: 0;
+      height: 1px;
+      background-color: var(--separator);
+    }
+
+    .row-anchor {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.15rem 1.25rem;
+      text-decoration: none;
+      color: inherit;
+      min-height: 44px;
+      /* Apple minimum touch target */
+      outline: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .row-anchor {
+        transition: background-color 0.12s ease;
+      }
+
+      .arrow-symbol {
+        transition: transform 0.15s ease, color 0.15s ease;
+      }
+    }
+
+    .row-anchor:hover {
+      background-color: var(--tag-bg);
+    }
+
+    .row-anchor:hover .project-title {
+      color: var(--accent);
+    }
+
+    .row-anchor:hover .arrow-symbol {
+      transform: translate(2px, -2px);
+      color: var(--accent);
+    }
+
+    .row-anchor:focus-visible {
+      box-shadow: inset 0 0 0 2px var(--focus-ring);
+    }
+
+    .project-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .project-title {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--label-primary);
+    }
+
+    .project-desc {
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--label-secondary);
+      margin: 0;
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .platform-pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--label-secondary);
+      background-color: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+    }
+
+    .arrow-symbol {
+      color: var(--label-tertiary);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding: 0 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--label-tertiary);
+    }
+
+    @media (max-width: 38rem) {
+      .row-anchor {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+
+      .project-meta {
+        align-self: flex-start;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <div class="status-badge" aria-label="Current status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Senior / Class of 2026</span>
+      </div>
+      <h1>Adham Mamdouh Elnaqib</h1>
+      <p class="subtitle">Computer Science at Cairo University &bull; IBM ML Certified</p>
+    </header>
+
+    <section aria-labelledby="about-title">
+      <h2 id="about-title" class="section-eyebrow">Profile</h2>
+      <div class="inset-card card-padding">
+        <p class="lead-text">
+          Computer Science Senior specializing in machine learning systems, sports analytics models, and language model
+          interfaces. Focused on building responsive, high-integrity tools with clean cloud infrastructure.
+        </p>
+        <div class="stack-group" aria-label="Technical skills and tools">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">C++</span>
+          <span class="stack-tag">TypeScript</span>
+          <span class="stack-tag">PyTorch / Scikit-Learn</span>
+          <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">Terraform</span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="projects-title">
+      <h2 id="projects-title" class="section-eyebrow">Selected Work</h2>
+      <div class="inset-card">
+        <ul class="row-list">
+          <li class="row-item">
+            <a href="https://ask-your-data-demo.adhamelnaqib.workers.dev" class="row-anchor" target="_blank"
+              rel="noopener noreferrer">
+              <div class="project-body">
+                <span class="project-title">Ask Your Data</span>
+                <p class="project-desc">Query structured tabular datasets in plain language with LLM-assisted execution.
+                </p>
+              </div>
+              <div class="project-meta">
+                <span class="platform-pill">Cloudflare Worker</span>
+                <span class="arrow-symbol" aria-hidden="true">&#8599;</span>
+              </div>
+            </a>
+          </li>
+          <li class="row-item">
+            <a href="https://stephscore.streamlit.app" class="row-anchor" target="_blank" rel="noopener noreferrer">
+              <div class="project-body">
+                <span class="project-title">STEPH Score</span>
+                <p class="project-desc">Basketball impact metric and exploratory data dashboard for player efficiency.
+                </p>
+              </div>
+              <div class="project-meta">
+                <span class="platform-pill">Streamlit</span>
+                <span class="arrow-symbol" aria-hidden="true">&#8599;</span>
+              </div>
+            </a>
+          </li>
+          <li class="row-item">
+            <a href="https://drive.google.com/drive/folders/19e2YlYD5Ni3p4MOc_g0Y0Ofqm_7hCVNa?usp=share_link"
+              class="row-anchor" target="_blank" rel="noopener noreferrer">
+              <div class="project-body">
+                <span class="project-title">Technical Project Archive</span>
+                <p class="project-desc">Repository of laboratory assignments, course implementations, and research
+                  files.</p>
+              </div>
+              <div class="project-meta">
+                <span class="platform-pill">Archive</span>
+                <span class="arrow-symbol" aria-hidden="true">&#8599;</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <span>&copy; 2026 Adham Mamdouh Elnaqib</span>
+      <span>Cairo, Egypt</span>
+    </footer>
+  </main>
+</body>
+
+</html>
